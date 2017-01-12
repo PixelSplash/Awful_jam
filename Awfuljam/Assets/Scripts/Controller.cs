@@ -64,6 +64,6 @@ public class Controller : MonoBehaviour {
         rotationVer = sensivilityVer * Input.GetAxis("Mouse Y");
         transform.Rotate(0, rotationHor, 0);
         mycam.transform.Rotate(-rotationVer, 0 , 0);
-        Debug.Log(sanity);
+        //Debug.Log(sanity);
     }
 }
