@@ -15,7 +15,7 @@ public class AbrirPuerta : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        agarradera = GameObject.Find("agarradera1");
+        agarradera = transform.Find("agarradera1").gameObject;//GameObject.Find("agarradera1");
         naux = n;
         player = GameObject.Find("mano");
     }
