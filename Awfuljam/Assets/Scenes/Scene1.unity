@@ -549,7 +549,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e1245c8f31fc0b743beb97b289d0bfa4, type: 2}
+  - {fileID: 2100000, guid: 7e954bd975ee77d43ac75fc408b2addf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1124,6 +1124,36 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 308.332
       objectReference: {fileID: 0}
+    - target: {fileID: 198933861032640018, guid: 7b793b827e64b324da6aff803c542171,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.6431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 198933861032640018, guid: 7b793b827e64b324da6aff803c542171,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1697368798
+      objectReference: {fileID: 0}
+    - target: {fileID: 198933861032640018, guid: 7b793b827e64b324da6aff803c542171,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198933861032640018, guid: 7b793b827e64b324da6aff803c542171,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199556739819209848, guid: 7b793b827e64b324da6aff803c542171,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4a5148133d8a7934f83cca8990777d8e, type: 2}
+    - target: {fileID: 199556739819209848, guid: 7b793b827e64b324da6aff803c542171,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4a5148133d8a7934f83cca8990777d8e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b793b827e64b324da6aff803c542171, type: 2}
   m_IsPrefabParent: 0
