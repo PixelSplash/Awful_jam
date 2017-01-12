@@ -25,8 +25,8 @@ public class LightIntensity : MonoBehaviour {
 
     public void updateIntensity()
     {
+        lightIntensity -= 0.05f;
         if (lightIntensity >= 2) lightIntensity = 2;
         else if (lightIntensity <= 0) lightIntensity = 0;
-        lightIntensity -= 0.05f;
     }
 }
