@@ -16,6 +16,7 @@ public class Controller : MonoBehaviour {
     private AudioSource steps;
     // Use this for initialization
     void Start () {
+        Screen.showCursor = false;
         cc = GetComponent<CharacterController>();
         mycam = GameObject.Find("Camera");
         steps = GetComponent<AudioSource>();
