@@ -50,9 +50,19 @@ public class AbrirPuerta : MonoBehaviour
             }
             else
             {
-                state = !state;
-                naux = n;
-                move = false;
+                if (state)
+                {
+                    state = !state;
+                    naux = n;
+                    //move = ;
+                }
+                else
+                {
+                    state = !state;
+                    naux = n;
+                    move = false;
+                }
+                
             }
         }
 

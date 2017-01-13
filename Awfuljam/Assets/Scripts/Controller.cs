@@ -16,7 +16,7 @@ public class Controller : MonoBehaviour {
     private AudioSource steps;
     // Use this for initialization
     void Start () {
-        //Cursor.visible = false;
+        Cursor.visible = false;
         //Cursor.lockState = CursorLockMode.Locked;
         cc = GetComponent<CharacterController>();
         mycam = GameObject.Find("Camera");
