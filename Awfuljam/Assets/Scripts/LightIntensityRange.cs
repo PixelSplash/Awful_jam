@@ -9,8 +9,8 @@ public class LightIntensityRange : MonoBehaviour {
     public const float MAX_LIGHT_INTENSITY = 3;
     public const float MIN_LIGHT_INTENSITY = 0;
 
-    public const float MAX_LIGHT_RANGE = 3;
-    public const float MIN_LIGHT_RANGE = 1.5f;
+    public const float MAX_LIGHT_RANGE = 6.5f;
+    public const float MIN_LIGHT_RANGE = 4.5f;
 
     public const float DISCOUNT_INTENSITY = MAX_LIGHT_INTENSITY / (TIME / TIME_RATE);
     public const float DISCONUT_RANGE = (((MAX_LIGHT_RANGE - MIN_LIGHT_RANGE) * DISCOUNT_INTENSITY) / MAX_LIGHT_INTENSITY);
