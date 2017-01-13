@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class LightIntensity : MonoBehaviour {
 
-    
-    [Range(0, 2)]
-    public float lightIntensity = 0f;
+    public const int MAX_LIGHT_INTENSITY = 3;
+    public const int MID_LIGHT_INTENSITY = 1;
+    public const int MIN_LIGHT_INTENSITY = 0;
+
+    public const int MAX_LIGHT_RANGE = 3;
+    public const int MID_LIGHT_RANGE = 1;
+    public const int MIN_LIGHT_RANGE = 0;
+
+
+    [Range(0, MAX_LIGHT_INTENSITY)]
+    public float lightIntensity = MAX_LIGHT_INTENSITY;
+    public int seconds;
     public GameObject lightObj;
 
     private Light light;
@@ -14,7 +23,8 @@ public class LightIntensity : MonoBehaviour {
     // Use this for initialization
     void Start () {
         light = lightObj.GetComponent<Light>();
-        InvokeRepeating("updateIntensity", 0.25f, 1.0f);
+        InvokeRepeating("updateIntensity", 1.0f, 0.05f);
+        InvokeRepeating("timer", 1.0f, 1.0f);
 
     }
 	
@@ -25,8 +35,18 @@ public class LightIntensity : MonoBehaviour {
 
     public void updateIntensity()
     {
-        lightIntensity -= 0.05f;
-        if (lightIntensity >= 2) lightIntensity = 2;
-        else if (lightIntensity <= 0) lightIntensity = 0;
+        lightIntensity -= 0.005f;
+        if (lightIntensity >= MAX_LIGHT_INTENSITY) lightIntensity = MAX_LIGHT_INTENSITY;
+        else if (lightIntensity <= MIN_LIGHT_INTENSITY) lightIntensity = MIN_LIGHT_INTENSITY;
+    }
+
+    public void setMaxIntensity()
+    {
+        lightIntensity = MAX_LIGHT_INTENSITY;
+    }
+    
+    public void timer()
+    {
+        seconds++;
     }
 }
