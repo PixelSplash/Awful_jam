@@ -35,6 +35,7 @@ public class LightIntensityRange : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         light.intensity = lightIntensity;
+        light.range = lightRange;
 	}
 
     public void updateIntensity_Range()
