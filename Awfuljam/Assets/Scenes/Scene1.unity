@@ -3558,6 +3558,7 @@ GameObject:
   - component: {fileID: 541639140}
   - component: {fileID: 541639139}
   - component: {fileID: 541639138}
+  - component: {fileID: 541639141}
   m_Layer: 0
   m_Name: Candela
   m_TagString: Untagged
@@ -3587,7 +3588,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 0.1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 15
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -3607,6 +3608,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: -89.547005, y: 0, z: -43.971}
+--- !u!114 &541639141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 541639137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4243ee8d130a20746bc0e1bc1a38f4b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rango: 1
 --- !u!1 &579880539
 GameObject:
   m_ObjectHideFlags: 0
@@ -6579,13 +6592,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 873044065}
-  m_LocalRotation: {x: 0.7112383, y: 0.00451194, z: -0.008396855, w: -0.70288634}
+  m_LocalRotation: {x: 0.71128654, y: -0.0023963314, z: -0.0014063107, w: -0.70289665}
   m_LocalPosition: {x: -0.333, y: 186.258, z: 17.214}
   m_LocalScale: {x: 60.940872, y: 60.940876, z: 60.940876}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: -448.754, y: -122.745, z: 123.060005}
+  m_LocalEulerAnglesHint: {x: -449.315, y: -186.57599, z: 186.88399}
 --- !u!64 &873044069
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6929,7 +6942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1300369799}
   m_Layer: 0
-  m_Name: mano
+  m_Name: manoIzquier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
