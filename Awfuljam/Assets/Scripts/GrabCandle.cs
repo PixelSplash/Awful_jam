@@ -5,11 +5,11 @@ using UnityEngine;
 public class GrabCandle : MonoBehaviour {
     public float rango = 1f;
     private GameObject player;
-    private LightIntensityRange lightController;
+    private LightIntensityRange lightIntController;
     // Use this for initialization
     void Start () {
         player = GameObject.Find("mano");
-        lightController = (LightIntensityRange)FindObjectOfType(typeof(LightIntensityRange));
+        lightIntController = (LightIntensityRange)FindObjectOfType(typeof(LightIntensityRange));
     }
 	
 	// Update is called once per frame
@@ -20,8 +20,8 @@ public class GrabCandle : MonoBehaviour {
             //Debug.Log(Mathf.Abs(transform.position.x - player.transform.position.x));
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
-                lightController.lightIntensity = LightIntensityRange.MAX_LIGHT_INTENSITY;
-                lightController.lightRange = LightIntensityRange.MAX_LIGHT_RANGE;
+                lightIntController.lightIntensity = LightIntensityRange.MAX_LIGHT_INTENSITY;
+                lightIntController.lightRange = LightIntensityRange.MAX_LIGHT_RANGE;
                 Destroy(gameObject);
             }
         }

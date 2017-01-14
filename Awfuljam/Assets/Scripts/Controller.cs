@@ -5,7 +5,7 @@ using UnityEngine;
 public class Controller : MonoBehaviour {
     public float light_ration = 0.05f;
     public float sanity = 100f;
-    public int lights = 1;
+    public int lights = 0;
     CharacterController cc;
     public float speed = 5;
     public float rotation_speed = 90;
@@ -15,6 +15,8 @@ public class Controller : MonoBehaviour {
     private float sensivilityVer = 3;
     private GameObject mycam;
     private AudioSource steps;
+    private LightIntensityRange lightIntController;
+    private float lightValue;
     // Use this for initialization
     void Start () {
         Cursor.visible = false;
@@ -22,6 +24,7 @@ public class Controller : MonoBehaviour {
         cc = GetComponent<CharacterController>();
         mycam = GameObject.Find("Camera");
         steps = GetComponent<AudioSource>();
+        lightIntController = (LightIntensityRange)FindObjectOfType(typeof(LightIntensityRange));
     }
 	
 	// Update is called once per frame
@@ -47,7 +50,29 @@ public class Controller : MonoBehaviour {
         }
 
         //Sanity
-        sanity += (lights - 2)* light_ration;
+        lightValue = lights + (lightIntController.lightIntensity / LightIntensityRange.MAX_LIGHT_INTENSITY);
+        //Debug.Log(lightValue);
+        if (lightValue < 0.26f)
+        {
+            sanity -= 2 * light_ration;
+        }
+        else if (lightValue < 1.01f)
+        {
+            sanity -= 1 * light_ration;
+        }
+        else if (lightValue < 1.26f)
+        {
+            //sanity += (lights - 2) * light_ration;
+        }
+        else if (lightValue < 1.76f)
+        {
+            sanity += 1 * light_ration;
+        }
+        else
+        {
+            sanity += 2 * light_ration;
+        }
+        
 
         if(sanity < 0)
         {
@@ -65,6 +90,6 @@ public class Controller : MonoBehaviour {
         rotationVer = sensivilityVer * Input.GetAxis("Mouse Y");
         transform.Rotate(0, rotationHor, 0);
         mycam.transform.Rotate(-rotationVer, 0 , 0);
-        //Debug.Log(sanity);
+        Debug.Log(sanity);
     }
 }

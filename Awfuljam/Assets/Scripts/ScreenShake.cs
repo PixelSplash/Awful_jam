@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ScreenShake : MonoBehaviour {
+    public float shakeRatio = 0.01f;
     private SimpleTimer timer;
     private float initialy;
     private float initialz;
+    private Controller player;
     // Use this for initialization
     void Start () {
         timer = GetComponent<SimpleTimer>();
         initialy = transform.position.y;
         initialz = transform.position.z;
         timer.timerStart(0.01f);
+        player = (Controller)FindObjectOfType(typeof(Controller));
     }
 	
 	// Update is called once per frame
@@ -23,7 +26,23 @@ public class ScreenShake : MonoBehaviour {
     }
     private void Shake()
     {
-        transform.position = new Vector3(transform.position.x, initialy + Random.Range(-0.01f, 0.01f), initialz + Random.Range(-0.01f, 0.01f));
-        timer.timerStart(0.01f);
+        if(player.sanity < 50)
+        {
+            if (player.sanity > 33)
+            {
+                shakeRatio = 0.005f;
+            }
+            else if (player.sanity > 18)
+            {
+                shakeRatio = 0.01f;
+            }
+            else
+            {
+                shakeRatio = 0.02f;
+            }
+            transform.position = new Vector3(transform.position.x, transform.position.y + Random.Range(-shakeRatio, shakeRatio), transform.position.z + Random.Range(-shakeRatio, shakeRatio));
+            timer.timerStart(0.01f);
+        }
+        
     }
 }

@@ -39,13 +39,13 @@ public class LightIntensityRange : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         light.intensity = lightIntensity;
-<<<<<<< HEAD
+//<<<<<<< HEAD
         UpdateCandle();
-    }
-=======
-        light.range = lightRange;
+    //}
+//=======
+        //light.range = lightRange;
 	}
->>>>>>> origin/master
+//>>>>>>> origin/master
 
     public void updateIntensity_Range()
     {
@@ -71,6 +71,11 @@ public class LightIntensityRange : MonoBehaviour {
 
     public void UpdateCandle()
     {
-        candle.localScale = new Vector3(candle.localScale.x, candle.localScale.y, (lightIntensity / MAX_LIGHT_INTENSITY) * 100);
+        float tmp = (lightIntensity / MAX_LIGHT_INTENSITY) * 100;
+        if(tmp < 10f)
+        {
+            tmp = 10f;
+        }
+        candle.localScale = new Vector3(candle.localScale.x, candle.localScale.y, tmp );
     }
 }
