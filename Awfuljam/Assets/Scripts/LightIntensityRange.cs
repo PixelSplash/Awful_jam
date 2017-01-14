@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightIntensityRange : MonoBehaviour {
 
-    public const float TIME = 30;
+    public const float TIME = 60;
     public const float TIME_RATE = 0.05f;
     public const float MAX_LIGHT_INTENSITY = 3;
     public const float MIN_LIGHT_INTENSITY = 0;
