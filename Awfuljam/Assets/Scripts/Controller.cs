@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Controller : MonoBehaviour {
+    public float light_ration = 0.05f;
     public float sanity = 100f;
     public int lights = 1;
     CharacterController cc;
@@ -46,7 +47,7 @@ public class Controller : MonoBehaviour {
         }
 
         //Sanity
-        sanity += (lights - 2)* 0.05f;
+        sanity += (lights - 2)* light_ration;
 
         if(sanity < 0)
         {
