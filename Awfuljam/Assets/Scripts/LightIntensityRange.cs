@@ -21,6 +21,7 @@ public class LightIntensityRange : MonoBehaviour {
     public float lightRange = MAX_LIGHT_RANGE;
     public int seconds;
     public GameObject lightObj;
+    public Transform candle;
 
     private Light light;
 
@@ -29,13 +30,17 @@ public class LightIntensityRange : MonoBehaviour {
         light = lightObj.GetComponent<Light>();
         InvokeRepeating("updateIntensity_Range", 1.0f, TIME_RATE);
         InvokeRepeating("timer", 1.0f, 1.0f);
+        //InvokeRepeating("UpdateCandle", 1.0f, 1.0f);
+        candle = transform.Find("body");
+        lightIntensity = MAX_LIGHT_INTENSITY;
 
     }
 	
 	// Update is called once per frame
 	void Update () {
         light.intensity = lightIntensity;
-	}
+        UpdateCandle();
+    }
 
     public void updateIntensity_Range()
     {
@@ -57,5 +62,10 @@ public class LightIntensityRange : MonoBehaviour {
     public void timer()
     {
         seconds++;
+    }
+
+    public void UpdateCandle()
+    {
+        candle.localScale = new Vector3(candle.localScale.x, candle.localScale.y, (lightIntensity / MAX_LIGHT_INTENSITY) * 100);
     }
 }
