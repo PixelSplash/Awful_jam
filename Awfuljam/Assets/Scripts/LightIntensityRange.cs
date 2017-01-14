@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class LightIntensityRange : MonoBehaviour {
 
-    public const float TIME = 120;
+    public const float TIME = 30;
     public const float TIME_RATE = 0.05f;
-    public const float MAX_LIGHT_INTENSITY = 15;
+    public const float MAX_LIGHT_INTENSITY = 3;
     public const float MIN_LIGHT_INTENSITY = 0;
 
-    public const float MAX_LIGHT_RANGE = 20;
-    public const float MIN_LIGHT_RANGE = 1.5f;
+    public const float MAX_LIGHT_RANGE = 6.5f;
+    public const float MIN_LIGHT_RANGE = 4.5f;
 
     public const float DISCOUNT_INTENSITY = MAX_LIGHT_INTENSITY / (TIME / TIME_RATE);
     public const float DISCONUT_RANGE = (((MAX_LIGHT_RANGE - MIN_LIGHT_RANGE) * DISCOUNT_INTENSITY) / MAX_LIGHT_INTENSITY);
@@ -39,8 +39,13 @@ public class LightIntensityRange : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         light.intensity = lightIntensity;
+<<<<<<< HEAD
         UpdateCandle();
     }
+=======
+        light.range = lightRange;
+	}
+>>>>>>> origin/master
 
     public void updateIntensity_Range()
     {
